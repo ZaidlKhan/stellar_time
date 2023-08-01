@@ -5,6 +5,11 @@ body {
     height: 100vh;
     margin: 0;
     background: black;
+    overflow: hidden;
+    background-image: url("image.jpg");
+    background-position: center;
+    background-size: cover;
+
 }
 
 @keyframes spin-earth {
@@ -51,8 +56,8 @@ body {
 .mercury {
     position: absolute;
     background: grey;
-    top: 90px;
-    left: 10px;
+    top: 85px;
+    left: 5px;
     width: 11px;
     height: 11px;
     pointer-events: none;
@@ -61,8 +66,8 @@ body {
 .venus {
     position: absolute;
     background: orange;
-    top: 150px;
-    left: 150px;
+    top: 165px;
+    left: 130px;
     width: 13.5px;
     height: 13.5px;
     pointer-events: none;
@@ -107,8 +112,8 @@ body {
     background: lightblue;
     width: 35px;
     height: 35px;
-    top: 10px;
-    left: 480px;
+    top: 30px;
+    left: 520px;
     pointer-events: none;
 } 
 
@@ -116,11 +121,10 @@ body {
     background: darkblue;
     width: 35px;
     height: 35px;
-    top: 400px;
+    top: 450px;
     left: 830px;
     pointer-events: none;
 } 
-
 
 #orbit-mercury {
     position: absolute;
@@ -130,8 +134,7 @@ body {
     border-radius: 100%;
     background: transparent;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
 #orbit-venus {
@@ -142,8 +145,7 @@ body {
     background: transparent;
     border: 2px #4A437F dashed;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
 #orbit-earth {
@@ -154,8 +156,7 @@ body {
     background: transparent;
     border: 2px #4A437F dashed;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
 #orbit-mars {
@@ -166,8 +167,7 @@ body {
     background: transparent;
     border: 2px #4A437F dashed;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
 #orbit-jupiter {
@@ -178,8 +178,7 @@ body {
     background: transparent;
     border: 2px #4A437F dashed;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
 #orbit-saturn {
@@ -190,8 +189,7 @@ body {
     background: transparent;
     border: 2px #4A437F dashed;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
 #orbit-uranus {
@@ -202,8 +200,7 @@ body {
     background: transparent;
     border: 2px #4A437F dashed;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
 #orbit-neptune {
@@ -214,7 +211,28 @@ body {
     background: transparent;
     border: 2px #4A437F dashed;
     pointer-events: none;
-    -webkit-animation: spin-right 1000s linear infinite;
-    animation: spin-right 1000s linear infinite;
+    rotate: 0deg;
 }
 
+.time-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    transform: translate(-50%, 155px);
+    font-size: 3em;
+    color: white;
+    z-index: 10;
+}
+
+@-webkit-keyframes spin-right {
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  

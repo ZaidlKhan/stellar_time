@@ -6,34 +6,26 @@ body {
     margin: 0;
     background: black;
     overflow: hidden;
-    background-image: url("image.jpg");
+    background-image: url("assets/image.jpg");
     background-position: center;
     background-size: cover;
 
 }
 
-@keyframes spin-earth {
-    0% {
-        transform: rotate(0deg) translate(-127.5px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translate(-127.5px) rotate(-360deg);
-    }
-}
-
-
 .sun {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: yellow;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    background-image: url("assets/sun.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-
 .planet {
     width: 50px;
     height: 50px;
@@ -41,6 +33,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    pointer-events: none;
 }
 
 .orbit {
@@ -50,80 +43,85 @@ body {
     border: 1px solid grey;
     border-radius: 50%;
     background: transparent;
-    pointer-events: none;
 }
 
 .mercury {
-    position: absolute;
-    background: grey;
+    background-image: url("assets/mercury.png");
+    background-size: cover;
     top: 85px;
     left: 5px;
     width: 11px;
     height: 11px;
-    pointer-events: none;
 }
 
 .venus {
-    position: absolute;
-    background: orange;
+    background-image: url("assets/venus.png");
+    background-size: cover;
     top: 165px;
     left: 130px;
     width: 13.5px;
     height: 13.5px;
-    pointer-events: none;
 }
 
 .earth {
-    background: blue;
+    background-image: url("assets/earth.png");
+    background-size: cover;
     width: 13.5px;
     height: 13.5px;
     top: 190px;
     left: 210px;
-    pointer-events: none;
-}
+}  
 
 .mars {
-    background: red;
+    background-image: url("assets/mars.png");
+    background-size: cover;
     width: 13.5px;
     height: 13.5px;
     top: 145px;
     left: -7px;
-    pointer-events: none;
 }
+
 .jupiter {
-    background: beige;
-    width: 35px;
-    height: 35px;
+    background-image: url("assets/jupiter.png");
+    background-size: cover;
+    width: 40px;
+    height: 40px;
     top: 60px;
     left: 390px;
-    pointer-events: none;
 }
 
 .saturn{
-    background: brown;
-    width: 35px;
-    height: 35px;
-    top: 400px;
-    left: 545px;
-    pointer-events: none;
-} 
+    background-image: url("assets/saturn.png");
+    width: 60px;
+    height: 50px;
+    top: 390px;
+    left: 535px;
+    border-radius: 0;  
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .uranus{
-    background: lightblue;
-    width: 35px;
-    height: 35px;
+    background-image: url("assets/uranus.png");
+    width: 40px;
+    height: 40px;
     top: 30px;
     left: 520px;
-    pointer-events: none;
+    border-radius: 0; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
 } 
 
 .neptune{
-    background: darkblue;
-    width: 35px;
-    height: 35px;
+    background-image: url("assets/neptune.png");
+    background-size: cover;
+    width: 30px;
+    height: 30px;
     top: 450px;
-    left: 830px;
-    pointer-events: none;
+    left: 835px;
 } 
 
 #orbit-mercury {
@@ -215,24 +213,19 @@ body {
 }
 
 .time-display {
+    font-size: 6vw;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    left: 40px;
+    top: 20px;
+    user-select: none;
     pointer-events: none;
-    transform: translate(-50%, 155px);
-    font-size: 3em;
     color: white;
-    z-index: 10;
+    font-family: 'CustomFont', fallback, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
 }
 
-@-webkit-keyframes spin-right {
-    100% {
-      -webkit-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
 
-  
+@font-face {
+    font-family: 'CustomFont';
+    src: url('assets/Orbitron-Regular.ttf');
+  }

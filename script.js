@@ -1,5 +1,6 @@
 let referenceTime = Date.UTC(2023, 7, 1);
 let currentTime = Date.now();
+let key = "5AJsvO8IkHKlk8M1q8vc44HnKkqrbxiIJoAolTBf"
 
 let planetData = {
   mercury: { orbitPeriod: 88 },
@@ -22,6 +23,41 @@ Object.keys(planetData).forEach(planet => {
   element.style.transform = 'rotate(' + -rotation + 'deg)';
 });
 
+fetch('https://api.nasa.gov/planetary/apod?api_key=5AJsvO8IkHKlk8M1q8vc44HnKkqrbxiIJoAolTBf')
+ .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    displayNews(data);
+  })
+  .catch(error => console.error('Error:', error));
+
+function displayNews(data) {
+  let newsContainer = document.querySelector('#news-container');
+  newsContainer.innerHTML = '';
+  let date = data.date;
+  let title = data.title;
+  let imageUrl = data.url;
+  let description = data.explanation
+
+  let articleElement = document.createElement('div');
+  articleElement.classList.add('article');
+
+  let imageElement = document.createElement('img');
+  imageElement.src = imageUrl;
+  articleElement.appendChild(imageElement);
+  imageElement.width = 400
+  imageElement.height = 300
+
+  let titleElement = document.createElement('h2');
+  titleElement.innerText = title;
+  articleElement.appendChild(titleElement);
+
+  let descriptionElement = document.createElement('h4');
+  descriptionElement.src = description
+  articleElement.appendChild(descriptionElement)
+
+  document.getElementById('news-container').appendChild(articleElement);
+}
 
 function updateTime() {
   var now = new Date();

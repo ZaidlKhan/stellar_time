@@ -31,7 +31,7 @@
         </div>
 
         <div id="orbit-jupiter">
-            <div class="planet jupiter"></div>
+            <div class="planet jupiter" onmouseover="console.log('Jupiter hovered'); updateInfo('jupiter')" onmouseout="resetInfo()"></div>
         </div>
 
         <div id="orbit-saturn">
@@ -51,9 +51,34 @@
             <p id="planet-info"></p>
         </div>
 
-        <div id="left-div"></div>
+        <div id="left-div">
+            <div id="info-title">The Solar System</div>
+            <div id="general-description">
+                The solar system is a collection of celestial bodies, including the Sun, eight planets, their moons, and various comets, asteroids, and other space rocks.
+            </div>
+            
+            <div id="info-content">
+                <div id="image-container">
+                    <img id="galaxy-img" src="assets/milky3.webp" alt="Milky Way">
+                </div>
+            </div>
 
+            <div id="image-description">
+                The Milky Way, our home galaxy, spans over 100,000 light-years in diameter. A vast collection of stars, planets, gas, and dust, it's a spiral galaxy that contains our Solar System. 
+            </div>
+            
+            <div id="fun-facts-container">
+                <h2>Fun Facts</h2>
+                <ul id="fun-facts-list">
+                    <li>The Solar System is around 4.6 billion years old.</li>
+                    <li>There are 8 recognized planets in our Solar System.</li>
+                    <li>The Kuiper Belt, beyond Neptune, is home to many icy bodies and dwarf planets, including Pluto.</li>
 
+                </ul>
+            </div>
+        </div>
+
+        <div id="sun" onmouseover="updateInfo('sun')" onmouseout="resetInfo()">Sun</div>
         <script src="script.js"></script>
     </body>
 </html>

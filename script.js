@@ -80,3 +80,99 @@ function updateTime() {
 }
 
 updateTime();
+
+function updateInfo(planet) {
+  const leftDiv = document.getElementById('left-div');
+  if (planet === 'sun') {
+      leftDiv.style.transform = 'scale(0.95)';
+      leftDiv.style.opacity = 0;
+
+      setTimeout(() => {
+          document.getElementById('info-title').innerText = "The Sun";
+          document.getElementById('general-description').innerText = "The Sun is the star at the center of our Solar System.";
+          document.getElementById('galaxy-img').src = "assets/real_sun.webp"; 
+          document.getElementById('image-description').innerText = "The Sun is over 90 million miles from Earth. It emits light and heat due to nuclear fusion reactions.";
+          
+          const funFactsList = document.getElementById('fun-facts-list');
+          while (funFactsList.firstChild) {
+            funFactsList.removeChild(funFactsList.firstChild);
+          }
+          const facts = [
+            "The Sun contains more than 99.8% of the total mass of our Solar System.",
+            "Over one million Earths could fit inside the Sun.",
+            "The Sun is essentially a giant fusion reactor where hydrogen atoms fuse to form helium. This process releases an immense amount of energy in the form of light and heat."
+          ];
+          facts.forEach(fact => {
+            const li = document.createElement('li');
+            li.textContent = fact;
+            funFactsList.appendChild(li);
+          });
+          leftDiv.style.transform = 'scale(1)';
+          leftDiv.style.opacity = 1;
+      }, 400);
+      
+  } else if (planet === "jupiter") {
+    console.log("Hovering over Jupiter!");
+    leftDiv.style.transform = 'scale(0.95)';
+      leftDiv.style.opacity = 0;
+
+      setTimeout(() => {
+          document.getElementById('info-title').innerText = "The Sun";
+          document.getElementById('general-description').innerText = "The Sun is the star at the center of our Solar System.";
+          document.getElementById('galaxy-img').src = "assets/real_sun.webp"; 
+          document.getElementById('image-description').innerText = "The Sun is over 90 million miles from Earth. It emits light and heat due to nuclear fusion reactions.";
+          
+          const funFactsList = document.getElementById('fun-facts-list');
+          while (funFactsList.firstChild) {
+            funFactsList.removeChild(funFactsList.firstChild);
+          }
+          const facts = [
+            "The Sun contains more than 99.8% of the total mass of our Solar System.",
+            "Over one million Earths could fit inside the Sun.",
+            "The Sun is essentially a giant fusion reactor where hydrogen atoms fuse to form helium. This process releases an immense amount of energy in the form of light and heat."
+          ];
+          facts.forEach(fact => {
+            const li = document.createElement('li');
+            li.textContent = fact;
+            funFactsList.appendChild(li);
+          });
+          leftDiv.style.transform = 'scale(1)';
+          leftDiv.style.opacity = 1;
+      }, 400);
+  } else {
+      leftDiv.style.transform = 'scale(1)';
+      leftDiv.style.opacity = 1;
+  }
+}
+
+function resetInfo() {
+  const leftDiv = document.getElementById('left-div');
+  leftDiv.style.transform = 'scale(0.95)';
+  leftDiv.style.opacity = 0;
+
+  setTimeout(() => {
+      document.getElementById('info-title').innerText = "The Solar System";
+      document.getElementById('general-description').innerText = "The solar system is a collection of celestial bodies, including the Sun, eight planets, their moons, and various comets, asteroids, and other space rocks.";
+      document.getElementById('galaxy-img').src = "assets/milky3.webp";
+      document.getElementById('image-description').innerText = "The Milky Way, our home galaxy, spans over 100,000 light-years in diameter. A vast collection of stars, planets, gas, and dust, it's a spiral galaxy that contains our Solar System.";
+
+      const funFactsList = document.getElementById('fun-facts-list');
+      while (funFactsList.firstChild) {
+          funFactsList.removeChild(funFactsList.firstChild);
+      }
+      const facts = [
+          "The Solar System is around 4.6 billion years old.",
+          "There are 8 recognized planets in our Solar System.",
+          "The Kuiper Belt, beyond Neptune, is home to many icy bodies and dwarf planets, including Pluto."
+      ];
+      facts.forEach(fact => {
+          const li = document.createElement('li');
+          li.textContent = fact;
+          funFactsList.appendChild(li);
+      });
+
+      // Scale back to normal size and fade in
+      leftDiv.style.transform = 'scale(1)';
+      leftDiv.style.opacity = 1;
+  }, 400);
+}

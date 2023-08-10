@@ -213,62 +213,103 @@ body {
 }
 
 .time-display {
-    font-size: 6vw;
-    position: absolute;
-    left: 40px;
-    top: 20px;
+    font-size: 5vw;
     user-select: none;
     pointer-events: none;
     color: white;
     font-family: 'CustomFont', fallback, sans-serif;
     text-shadow: 2px 2px 4px #000000;
+    border-bottom: 1px solid white; 
+    width: 100%; 
+    text-align: center; 
+    padding-bottom: 10px;
 }
 
-#news-container {
-    padding: 20px;
-    background-color: transparent;
-    color: white;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.news-article * {
+    margin: 5px;
+    padding: 5px;
 }
 
-#news-container .article {
-    margin-bottom: 20px;
+.news-article {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-bottom: 1px solid #ccc; 
 }
 
-#news-container h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+#space-news-title, .news-article {
+    margin: 0;
+}
+
+#space-news-title {
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.5vw;
+    margin-bottom: 5px;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'CustomFont', fallback, sans-serif;
+    border-bottom: 1px solid white; 
+    width: 100%; 
+    padding: 15px;
 }
 
-#news-container p {
-    line-height: 1.5em;
-    font-size: 1em;
+.news-article:last-child {
+    border-bottom: none;
 }
+
+.news-title {
+    font-size: 0.8vw;
+    color: white;
+    margin-bottom: 3px;
+    font-family: 'CustomFont', fallback, sans-serif;
+}
+
+
+.news-date, .news-link {
+    font-size: 0.8vw;
+    display: inline-block;
+    margin-right: 10px; 
+    color: #ccc;
+    font-family: 'CustomFont', fallback, sans-serif;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}
+
 
 #right-div {
     position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 30%; 
-    background: transparent;
-    color: #fff;
-    padding: 20px;
-    display: block;
-    box-sizing: border-box;
+    left: 2%;
+    top: 50;
+    height: 63%;
+    width: 22%;
+    box-sizing: border-box; 
+    overflow-y: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    border: 0.5px #fff solid;
+    border-radius: 15px;
+    overflow-x: hidden;
 }
 
+#left-div {
+    position: fixed;
+    right: 2%;
+    top: 50;
+    height: 63%;
+    width: 22%;
+    box-sizing: border-box; 
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5px #fff solid;
+    border-radius: 15px;
+    overflow-x: hidden;
+}
 
 @font-face {
     font-family: 'CustomFont';

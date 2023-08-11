@@ -111,7 +111,7 @@ function updateInfo(planet) {
           leftDiv.style.opacity = 1;
       }, 400);
       
-  } else if (planet === "jupiter") {
+  } else if (planet == "jupiter") {
     console.log("Hovering over Jupiter!");
     leftDiv.style.transform = 'scale(0.95)';
       leftDiv.style.opacity = 0;
@@ -171,8 +171,12 @@ function resetInfo() {
           funFactsList.appendChild(li);
       });
 
-      // Scale back to normal size and fade in
       leftDiv.style.transform = 'scale(1)';
       leftDiv.style.opacity = 1;
   }, 400);
 }
+
+
+document.getElementById('left-div').addEventListener('animationend', function() {
+  this.style.transition = 'transform 0.4s ease-out, opacity 0.4s ease-out';
+});

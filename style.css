@@ -9,7 +9,21 @@ body {
     background-image: url("assets/image.jpg");
     background-position: center;
     background-size: cover;
+    animation: fadeIn 1s ease-out forwards;
 
+}
+
+body, #left-div, #right-div, .planet {
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .sun {
@@ -34,6 +48,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
 }
 
 .orbit {
@@ -289,6 +304,7 @@ body {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.5);
     overflow-x: hidden;
+    animation: fadeIn 1.5s ease-out 2s forwards; 
 }
 
 #left-div {
@@ -307,7 +323,7 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     color: white;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    animation: fadeIn 1.5s ease-out 2s forwards;
 }
 
 #info-title {
@@ -404,6 +420,7 @@ body {
     line-height: 1.2;
     color: #fff; 
 }
+
 
 @font-face {
     font-family: 'CustomFont';
